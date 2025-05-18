@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=
+    , initial-scale=1.0">
+    <title>Cheferino's Kitchen</title>
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles/style-custom-araizaz.css">
+</head>
+<body>
+    <header>
+        <h1>Cheferino's Kitchen</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="menu.html">Menu</a></li>
+                <li class="active"><a href="order.html">Order</a></li>
+                <li><a href="reviews.html">Reviews</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <form method="POST" action="order.php">
+            <fieldset>
+                <legend>Customer Info:</legend>
+                <label for="name">Name:</label>
+                <input type="text" id="name" placeholder="Jane Doe" required>
+                <label for="phone">Phone:</label>
+                <input type="tel" id="phone" placeholder="(541) 123-4567">
+            </fieldset>
+            <fieldset>
+                <legend>Food Order</legend>
+                <label for="entree">Entree:</label>
+                <select id="entree">
+                    <option value="Cheferino's Club Sandwich">Cheferino's Club Sandwich</option>
+                    <option value="Orange Chicken">Orange Chicken</option>
+                    <option value="Spaghetti and Meatballs">Spaghetti and Meatballs</option>
+                </select>
+                <label for="beverage">Beverage:</label>
+                <select id="beverage">
+                    <option value="Cheferino's Mangoneada">Cheferino's Mangoneada</option>
+                    <option value="Limeade">Limeade</option>
+                    <option value="Horchata">Horchata</option>
+                </select>
+                <label for ="dessert">Dessert:</label>
+                <select id="dessert">
+                    <option value="Cheferino's Chocoflan Slice">Cheferino's Chocoflan Slice</option>
+                    <option value="Brownie">Brownie</option>
+                    <option value="Sous Chef Yudi's Cake">Sous Chef Yudi's Cake</option>
+                </select>
+                <label><input type="checkbox" name="addons[]" value="salsa"> Salsa</label>
+                <label><input type="checkbox" name="addons[]" value="Jalapenos"> Jalapenos</label>
+                <label for="total">Total:</label>
+                <input type="text" id="total" value="$0.00" readonly>
+            </fieldset>
+            <fieldset>
+                <legend>Dining Preferences</legend>
+                <label for="pickup">Pickup</label>
+                <input type="radio" name="dining" id="pickup">
+                <label for="delivery">Delivery</label>
+                <input type="radio" name="dining" id="delivery">
+                <label for="eat-in">Eat-in</label>
+                <input type="radio" name="dining" id="eat-in">
+                <input type="time" name="time">
+            </fieldset>
+            <fieldset>
+                <legend>Special Instructions</legend>
+                <input type="text" name="instructions" placeholder="Please add any special instructions here.">
+            </fieldset>
+            <input type="submit" value="Submit">
+        </form>
+    </main>
+    <footer>
+        <p>Cheferino@Cherferino.com</p>
+        <p>Instagram: @cheferin0</p>
+        <p>&copy;2025 Cheferino Inc.</p>
+        <p>Created by: Zeferino Araiza</p>
+    </footer>
+</body>
+</html>
