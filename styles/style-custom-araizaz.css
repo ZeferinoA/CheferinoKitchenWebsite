@@ -98,13 +98,6 @@ nav li a:active {
     display: none;
   }
   
-  /* Show the selected city */
-  #city-city1:checked ~ .city1-box,
-  #city-city2:checked ~ .city2-box,
-  #city-city3:checked ~ .city3-box {
-    display: block;
-  }
-  
   /* ⚠️ IMPORTANT: For this to work, the <input> and .map-box must be siblings
      inside the same container (.map-display) — not nested in another div. */
   

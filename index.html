@@ -7,6 +7,7 @@
     <title>Cheferino's Kitchen</title>
     <link rel="stylesheet" href="styles/style.css">
     <link rel="stylesheet" href="styles/style-custom-araizaz.css">
+    <link rel="stylesheet" href="weather-map-style.css">
 </head>
 <body>
     <header>
@@ -30,52 +31,35 @@
             <p>Tiperinos: Chop vegetables before meats in order to avoid cross-contamination and washing twice.</p>
         </aside>
         <div class="info-container">
-
-            <div class="hours-display">
-                <h3>Hours & Delivery</h3>
-                <p>Monday - Friday: 5 PM - 11 PM</p>
-                <p>Saturday - Sunday: 12 PM - 11 PM</p>
-            </div>
-          
-            <div class="map-display">
-               <input type="radio" name="city" id="city-city1" checked>
-                <label for="city-city1">Hermiston</label>
-          
-              <input type="radio" name="city" id="city-city2">
-                <label for="city-city2">Richland</label>
-          
-              <input type="radio" name="city" id="city-city3">
-                <label for="city-city3">Eugene</label>
-          
-              <div class="map-box city1-box">
-                <div class="map-label">405 N 1st St unit 105, Hermiston, OR 97838
-                </div>
-                <a href="https://www.google.com/maps/d/u/0/edit?mid=1klpLBO_-Ng9AeMC1Q1AOxE70Ry-Gp_U&usp=sharing" target="_blank">
-                  <img src="images/map-city1.jpg" 
-                     alt="Map of Hermiston" title = "Click to see map of Hermiston" class="city-map">
-                </a>
+          <div class="hours-display">
+              <h3>Hours & Delivery</h3>
+              <p id ="weekday-hours">Monday - Friday: 5 PM - 11 PM</p>
+              <p id ="weekend-hours">Saturday - Sunday: 12 PM - 11 PM</p>
+          </div>
+        
+          <div class="map-display">
+              <input type="radio" name="city" id="Hermiston" checked>
+              <label for="Hermiston">Hermiston</label>
+        
+            <input type="radio" name="city" id="Richland">
+              <label for="Richland">Richland</label>
+        
+            <input type="radio" name="city" id="Eugene">
+              <label for="Eugene">Eugene</label>
+        
+            <div class="map-box">
+              <div class="map-label" id="map-address">405 N 1st St unit 105, Hermiston, OR 97838</div>
+              <a id="map-link" href="https://www.google.com/maps/d/u/0/edit?mid=1klpLBO_-Ng9AeMC1Q1AOxE70Ry-Gp_U&usp=sharing" target="_blank">
+              <img id="map-image" src="images/map-city1.jpg" alt="Map of Hermiston" class="city-map">
+              </a>
+              <div class="weather-display">
+                <img id="weather-icon" src="images/cloudy-1-day.svg" alt="Weather Icon">
+                <span id="temperature">72°F</span>
+                <div id="patio-status">🌞 Patio is open!</div>
               </div>
-
-              <div class="map-box city2-box">
-                <div class="map-label">1026 Lee Blvd, Richland, WA 99352
-                </div>
-                <a href="https://www.google.com/maps/d/u/0/edit?mid=1NH9fJ-8xdwLGMycAq4Cq7CvaCz3xplE&usp=sharing" target="_blank">
-                  <img src="images/map-city2.jpg" 
-                     alt="Map of Richland" title = "Click to see map of Richland" class="city-map">
-                </a>
-              </div>
-
-              <div class="map-box city3-box">
-                <div class="map-label">398 E 11th Ave, Eugene, OR 97401
-                </div>
-                <a href="https://www.google.com/maps/d/u/0/edit?mid=1zKc023gvbEQYTQiGjYF12jcE3S-ZhmA&usp=sharing" target="_blank">
-                  <img src="images/map-city3.jpg" 
-                     alt="Map of Eugene" title = "Click to see map of Eugene" class="city-map">
-                </a>
-              </div>
-          
             </div>
           </div>
+        </div>
     </main>
     <footer>
         <p>Cheferino@Cherferino.com</p>
@@ -83,5 +67,6 @@
         <p>&copy;2025 Cheferino Inc.</p>
         <p>Created by: Zeferino Araiza</p>
     </footer>
+    <script src="js/weather-time.js"></script>
 </body>
 </html>
