@@ -61,7 +61,117 @@ function updateHours(city) {
     document.getElementById("weekend-hours").innerText = weekendHours[city];
 }
 
+const weatherApiUrls = {
+    Hermiston: "https://api.open-meteo.com/v1/forecast?latitude=45.8404&longitude=-119.2895&current=temperature_2m,weather_code&timezone=auto&temperature_unit=fahrenheit",
+    Richland: "https://api.open-meteo.com/v1/forecast?latitude=46.2857&longitude=-119.2845&current=temperature_2m,weather_code&timezone=auto&temperature_unit=fahrenheit",
+    Eugene:  "https://api.open-meteo.com/v1/forecast?latitude=44.0521&longitude=-123.0867&current=temperature_2m,weather_code&timezone=auto&temperature_unit=fahrenheit"
+};
+// Fetch and Display Weather and Time
 function fetchWeatherAndTime(city) {
-  console.log("Fetching weather and time for:", city);
-  // Placeholder: can update weather DOM elements here
+    const apiUrl = weatherApiUrls[city];
+    fetch(apiUrl)
+        .then(response => response.json())
+        .then(data => {
+            const current = data.current;
+            const temp = Math.round(current.temperature_2m);
+            const weatherCode = data.weather_code;
+            const timeZone = data.timezone;
+
+            const openclose = isBistroOpen(city, timeZone);
+
+            const localTime = new Date().toLocaleTimeString('en-US', {
+                hour: '2-digit', minute: '2-digit', hour12: true, timeZone: timeZone
+            });
+
+            document.getElementById("temperature").innerText = temp
+            showImage("weather-icon", weatherCode, localTime);
+            updatePatioStatus(temp, weatherCode, openclose);
+        });
+}
+
+// Determine Patio Status
+function updatePatioStatus(temp, weatherCode, openclose) {
+    const patioElement = document.getElementById("patio-status");
+    if (55 > temp || temp > 95 || weatherCode >= 55 || !openclose) {
+        patioElement.textContent = "Patio is CLOSED!";
+        patioElement.style.color = "red";
+    } else {
+        patioElement.textContent = "Patio is OPEN!";
+        patioElement.style.color = "green";
+    }
+}
+
+// Determine Day/Night Icon
+function showImage(elementId, weatherCode, localTimeStr) {
+    const [time, ampm] = localTimeStr.split(' ');
+    const [hourStr] = time.split(':');
+    let hour = parseInt(hourStr);  
+    // Convert to 24 hours time
+
+    if (ampm === "PM" && hour !== 12) hour += 12;
+    if (ampm === "AM" && hour === 12) hour = 0;
+    const isDayTime = hour >= 6 && hour < 18;
+
+    let weatherType = "Clear"; // default
+    if (weatherCode >= 45 && weatherCode <= 48) weatherType = "Fog";
+    else if (weatherCode >= 51 && weatherCode <= 67) weatherType = "Rain";
+    else if (weatherCode >= 71 && weatherCode <= 77) weatherType = "Snow";
+    else if (weatherCode >= 95) weatherType = "Storm";
+
+    const weatherImages = {
+        Clear: isDayTime ? "clear-day.svg" : "clear-night.svg",
+        Rain: isDayTime ? "rain-day.svg" : "rain-night.svg",
+        Snow: isDayTime ? "snow-day.svg" : "snow-night.svg",
+        Fog: isDayTime ? "fog-day.svg" : "fog-night.svg",
+        Storm: isDayTime ? "storm-day.svg" : "storm-night.svg"
+    };
+
+    const img = document.getElementById(elementId);
+    img.src = `images/weather/${weatherImages[weatherType]}`;
+    img.alt = `${weatherType} (${isDayTime ? "Day" : "Night"})`;
+}
+
+const bistroHours = {
+    Hermiston: {
+        weekday: { open: "10:00", close: "20:00" },
+        weekend: { open: "10:00", close: "22:00" }
+    },
+    Richland: {
+        weekday: { open: "09:00", close: "21:00" },
+        weekend: { open: "09:00", close: "23:00" }
+    },
+    Eugene: {
+        weekday: { open: "09:00", close: "18:00" },
+        weekend: { open: "09:00", close: "21:00" }
+    }
+};
+
+function isBistroOpen(city, timeZone) {
+    const now = new Date().toLocaleString("en-US", { timeZone });
+    const localTime = new Date(now);
+    const day = localTime.getDay(); // 0 = Sunday, 6 = Saturday
+    const currentMinutes = localTime.getHours() * 60 + localTime.getMinutes();
+
+    const isWeekend = day === 0 || day === 6;
+    const hours = isWeekend ? bistroHours[city].weekend : bistroHours[city].weekday;
+
+    const statusElement = document.getElementById("bistro-status");
+
+    if (!hours) {
+        statusElement.textContent = "Bistro is CLOSED (Today)";
+        statusElement.style.color = "red";
+        return false;
+    }
+
+    const [openH, openM] = hours.open.split(":").map(Number);
+    const [closeH, closeM] = hours.close.split(":").map(Number);
+    const openMinutes = openH * 60 + openM;
+    const closeMinutes = closeH * 60 + closeM;
+
+    const isOpen = currentMinutes >= openMinutes && currentMinutes < closeMinutes;
+
+    statusElement.textContent = isOpen ? "Bistro is OPEN!" : "Bistro is CLOSED!";
+    statusElement.style.color = isOpen ? "green" : "red";
+
+    return isOpen;
 }
