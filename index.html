@@ -7,7 +7,7 @@
     <title>Cheferino's Kitchen</title>
     <link rel="stylesheet" href="styles/style.css">
     <link rel="stylesheet" href="styles/style-custom-araizaz.css">
-    <link rel="stylesheet" href="weather-map-style.css">
+    <link rel="stylesheet" href="styles/weather-map-style.css">
 </head>
 <body>
     <header>
@@ -27,18 +27,18 @@
             <h3>Story</h3>
             <p>Cheferino's story originally started with cooking meals and posting on his Instagram for friends, now his cooking has grown to serve a larger populace, which he considers friends.</p>
         </section>
-        <aside>
-            <p>Tiperinos: Chop vegetables before meats in order to avoid cross-contamination and washing twice.</p>
-        </aside>
         <div class="info-container">
           <div class="hours-display">
-              <h3>Hours & Delivery</h3>
-              <p id ="weekday-hours">Monday - Friday: 10 AM - 8 PM</p>
-              <p id ="weekend-hours">Saturday - Sunday: 10 PM - 10 PM</p>
-          </div>
-          
-          <p id="bistro-status">OPEN/CLOSE</p>
-
+            <p id ="time-display">LOCAL TIME</p>
+            <p id="bistro-status">OPEN/CLOSE</p>
+            <h3>Hours & Delivery</h3>
+            <p id ="weekday-hours">Monday - Friday: 10 AM - 8 PM</p>
+            <p id ="weekend-hours">Saturday - Sunday: 10 PM - 10 PM</p>
+            <div class="weather-display">
+              <img id="weather-icon" src="images/cloudy-1-day.svg" alt="Weather Icon">
+              <p><span id="temperature">70</span>°F</p>
+              <div id="patio-status">🌞 Patio is open!</div>
+            </div>
           </div>
         
           <div class="map-display">
@@ -56,16 +56,13 @@
               <a id="map-link" href="https://www.google.com/maps/d/u/0/edit?mid=1klpLBO_-Ng9AeMC1Q1AOxE70Ry-Gp_U&usp=sharing" target="_blank">
               <img id="map-image" src="images/map-city1.jpg" alt="Map of Hermiston" class="city-map">
               </a>
-              <div class="weather-display">
-                <img id="weather-icon" src="images/cloudy-1-day.svg" alt="Weather Icon">
-                </div>
-                <p><span id="temperature">70</span>°F</p>
-                <div id="patio-status">🌞 Patio is open!</div>
-              </div>
             </div>
           </div>
         </div>
     </main>
+    <aside>
+        <p>Tiperinos: Chop vegetables before meats in order to avoid cross-contamination and washing twice.</p>
+    </aside>
     <footer>
         <p>Cheferino@Cherferino.com</p>
         <p>Instagram: @cheferin0</p>

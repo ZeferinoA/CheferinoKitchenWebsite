@@ -77,11 +77,12 @@ function fetchWeatherAndTime(city) {
             const weatherCode = data.weather_code;
             const timeZone = data.timezone;
 
-            const openclose = isBistroOpen(city, timeZone);
-
             const localTime = new Date().toLocaleTimeString('en-US', {
                 hour: '2-digit', minute: '2-digit', hour12: true, timeZone: timeZone
             });
+
+            document.getElementById("time-display").textContent = "Local time is " + localTime
+            const openclose = isBistroOpen(city, timeZone);
 
             document.getElementById("temperature").innerText = temp
             showImage("weather-icon", weatherCode, localTime);

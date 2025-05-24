@@ -24,3 +24,34 @@
   margin-top: 2px;
   width: 2px;
 }
+
+  .review {
+    display: block;
+    border: 3px solid #dc4405;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    width: 75%;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    padding: .5em;
+  }
+  
+ .review-name {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #dc4405;
+  }
+
+  .review-title {
+    font-size: 1.20em;
+  }
+
+  .review-stars {
+    color: #ffc400;
+  }
+
+  .review p {
+    font-size: 1.1em;
+    margin: 0.5em 0;
+  }
