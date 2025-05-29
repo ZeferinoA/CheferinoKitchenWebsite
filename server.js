@@ -8,7 +8,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.json());
 
 app.listen(PORT, () => {
-  console.log(`Byte Bistro server running at http://localhost:${PORT}`);
+  console.log(`Cheferino Kitchen server running at http://localhost:${PORT}`);
 });
 
 const fs = require('fs');
