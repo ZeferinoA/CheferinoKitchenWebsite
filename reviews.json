@@ -1,9 +1,23 @@
 [
   {
-    "name": "Test User",
-    "city": "Golden",
+    "name": "test",
+    "city": "Hermiston",
+    "rating": 4,
+    "title": "test",
+    "comment": "test"
+  },
+  {
+    "name": "Zeferino Araiza",
+    "city": "Richland",
+    "rating": 3,
+    "title": "Best food from the chef",
+    "comment": "The chef (me) makes the best food"
+  },
+  {
+    "name": "Morgan Freeman",
+    "city": "Eugene",
     "rating": 5,
-    "title": "Great Meal",
-    "comment": "The Byte Burger is awesome!"
+    "title": "*Morgan Freeman Voice* Amazing",
+    "comment": "*Morgan Freeman Voice* The best food I have ever tried in my entire life"
   }
 ]

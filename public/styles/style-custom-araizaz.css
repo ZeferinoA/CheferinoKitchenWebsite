@@ -74,3 +74,96 @@ nav li a:active {
     text-decoration: underline;
 }
 
+/* Layout: two-column split */
+.review-layout {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+  margin: 2rem;
+}
+
+/* Left column (reviews) */
+.review-column {
+  flex: 2;
+}
+
+/* Right column (form) */
+.form-column {
+  flex: 1;
+  background: #f9f9f9;
+  padding: 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+}
+
+/* Review styling */
+.review {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  background-color: #fff;
+}
+
+.review .stars {
+  font-size: 1.2rem;
+  color: #f39c12; /* Gold stars */
+  margin-bottom: 0.25rem;
+}
+
+.review-title {
+  font-weight: bold;
+  font-size: 1.1rem;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.review-name {
+  font-weight: bold;
+}
+
+.review-city {
+  font-style: italic;
+  color: #555;
+}
+
+/* Form styling */
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+form label {
+  margin-top: 0.75rem;
+  margin-bottom: 0.25rem;
+  font-weight: bold;
+}
+
+form input,
+form select,
+form textarea {
+  padding: 0.5rem;
+  font-size: 1rem;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  margin-bottom: 0.75rem;
+}
+
+form textarea {
+  resize: vertical;
+}
+
+form button {
+  background-color: #e74c3c;
+  color: white;
+  border: none;
+  padding: 0.6rem;
+  font-size: 1rem;
+  cursor: pointer;
+  border-radius: 5px;
+  margin-top: 1rem;
+}
+
+form button:hover {
+  background-color: #c0392b;
+}

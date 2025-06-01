@@ -15,10 +15,10 @@ form.addEventListener("submit", function (e) {
 
   const review = {
     name: document.getElementById("name").value.trim(),
-    city: // COMPLETE GET city
+    city: document.getElementById("city").value.trim(),
     rating: parseInt(document.getElementById("rating").value),
-    title: // COMPLETE GET title
-    comment: // COMPLETE GET comment
+    title: document.getElementById("title").value.trim(),
+    comment: document.getElementById("comment").value.trim()
   };
 
   fetch('/submit-review', {
@@ -41,14 +41,14 @@ function renderReview(review) {
   div.className = "review-box";
 
   div.innerHTML = `
-    <article>
-      <div class="stars">${"★".repeat(review.rating)}</div>
-      // COMPLETE DISPLAY Title
-      <p>${review.comment}</p>
-      // COMPLETE DISPLAY Name and City
+    <article class="review">
+        <h3 class="review-name">${review.name}</h3>
+        <p class = "review-city"><em>${review.city}</em></p>
+        <div class="stars">${"★".repeat(review.rating)}</div>
+        <h4 class="review-title"> ${review.title}</h4>
+        <p class = "review-comment">${review.comment}</p>
     </article>
-    <hr>
   `;
 
-  container.prepend(div);
+  container.appendChild(div);
 }
