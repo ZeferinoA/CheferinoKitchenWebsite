@@ -1,0 +1,101 @@
+[
+  {
+    "date": "2025-06-02",
+    "city": "Eugene",
+    "delivery": true,
+    "entrees": [{ "name": "Cheferino's Club Sandwich", "quantity": 1 }],
+    "drinks": [{ "name": "Limeade", "quantity": 2 }],
+    "desserts": [],
+    "total": 27.97
+  },
+  {
+    "date": "2025-06-02",
+    "city": "Hermiston",
+    "delivery": false,
+    "entrees": [{ "name": "Orange Chicken", "quantity": 2 }],
+    "drinks": [],
+    "desserts": [{ "name": "Brownie", "quantity": 2 }],
+    "total": 41.96
+  },
+  {
+    "date": "2025-06-03",
+    "city": "Richland",
+    "delivery": true,
+    "entrees": [{ "name": "Spaghetti and Meatballs", "quantity": 1 }],
+    "drinks": [{ "name": "Horchata", "quantity": 1 }],
+    "desserts": [{ "name": "Cheferino's Chocoflan Slice", "quantity": 1 }],
+    "total": 35.97
+  },
+  {
+    "date": "2025-06-03",
+    "city": "Eugene",
+    "delivery": false,
+    "entrees": [{ "name": "Gonzalez's Carnitas", "quantity": 1 }],
+    "drinks": [{ "name": "Cheferino's Mangoneada", "quantity": 1 }],
+    "desserts": [],
+    "total": 24.98
+  },
+  {
+    "date": "2025-06-04",
+    "city": "Hermiston",
+    "delivery": true,
+    "entrees": [
+      { "name": "Cheferino's Club Sandwich", "quantity": 2 },
+      { "name": "Orange Chicken", "quantity": 1 }
+    ],
+    "drinks": [{ "name": "Limeade", "quantity": 3 }],
+    "desserts": [],
+    "total": 63.94
+  },
+  {
+    "date": "2025-06-05",
+    "city": "Richland",
+    "delivery": false,
+    "entrees": [{ "name": "Spaghetti and Meatballs", "quantity": 4 }],
+    "drinks": [{ "name": "Horchata", "quantity": 4 }],
+    "desserts": [{ "name": "Brownie", "quantity": 4 }],
+    "total": 119.88
+  },
+  {
+    "date": "2025-06-05",
+    "city": "Eugene",
+    "delivery": true,
+    "entrees": [],
+    "drinks": [{ "name": "Cheferino's Mangoneada", "quantity": 2 }],
+    "desserts": [{ "name": "Cheferino's Chocoflan Slice", "quantity": 2 }],
+    "total": 32.96
+  },
+  {
+    "date": "2025-06-06",
+    "city": "Hermiston",
+    "delivery": false,
+    "entrees": [{ "name": "Gonzalez's Carnitas", "quantity": 3 }],
+    "drinks": [],
+    "desserts": [],
+    "total": 53.97
+  },
+  {
+    "date": "2025-06-07",
+    "city": "Richland",
+    "delivery": true,
+    "entrees": [
+      { "name": "Orange Chicken", "quantity": 1 },
+      { "name": "Gonzalez's Carnitas", "quantity": 1 }
+    ],
+    "drinks": [
+      { "name": "Limeade", "quantity": 1 },
+      { "name": "Horchata", "quantity": 1 }
+    ],
+    "desserts": [{ "name": "Brownie", "quantity": 2 }],
+    "total": 56.94
+  },
+  {
+    "date": "2025-06-08",
+    "city": "Eugene",
+    "delivery": false,
+    "entrees": [{ "name": "Spaghetti and Meatballs", "quantity": 2 }],
+    "drinks": [],
+    "desserts": [{ "name": "Cheferino's Chocoflan Slice", "quantity": 1 }],
+    "total": 47.97
+  }
+]

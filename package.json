@@ -19,6 +19,7 @@
   "homepage": "https://github.com/ZeferinoA/HW5#readme",
   "description": "",
   "dependencies": {
-    "express": "^5.1.0"
+    "express": "^5.1.0",
+    "express-handlebars": "^8.0.1"
   }
 }

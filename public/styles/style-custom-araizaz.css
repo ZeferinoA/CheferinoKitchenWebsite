@@ -167,3 +167,105 @@ form button {
 form button:hover {
   background-color: #c0392b;
 }
+
+/* === Manager Dashboard Layout === */
+.dashboard-container {
+    max-width: 900px;
+    margin: 2rem auto;
+    padding: 1rem;
+    background: #ffffff;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    border-radius: 10px;
+}
+
+/* Dashboard Section Headers */
+.dashboard-container h2, .dashboard-container h3 {
+    color: #dc4405;
+    border-bottom: 2px solid #f1bf81;
+    padding-bottom: 5px;
+    margin-bottom: 1rem;
+    font-weight: 700;
+}
+
+/* Filter Form (already defined, minor improvement) */
+.filter-form {
+    background-color: #fff5f2;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 2em;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: flex-start;
+    align-items: center;
+    border: 2px solid #f1903e;
+}
+
+.filter-form .form-group {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
+}
+
+.filter-form select,
+.filter-form input[type="checkbox"],
+.filter-form button {
+    width: auto;
+}
+
+.filter-form button {
+    background-color: #dc4405;
+    color: white;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.filter-form button:hover {
+    background-color: #b93602;
+}
+
+/* Order Summary Card */
+.summary {
+    padding: 15px;
+    border: 2px solid #f1bf81;
+    border-radius: 10px;
+    margin-bottom: 2em;
+    background-color: #fff6f2;
+}
+
+.summary h3 {
+    margin-top: 0;
+    color: #dc4405;
+}
+
+/* Individual Order Box */
+.order-box {
+    border: 1px solid #ddd;
+    background-color: #ffffff;
+    padding: 15px 20px;
+    margin-bottom: 1em;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+    list-style: none;
+}
+
+.order-box p {
+    margin: 5px 0;
+    color: #333;
+}
+
+.order-box ul {
+    margin-top: 5px;
+    padding-left: 20px;
+    list-style-type: disc;
+}
+
+/* Section Spacing */
+section {
+    margin-bottom: 2rem;
+}

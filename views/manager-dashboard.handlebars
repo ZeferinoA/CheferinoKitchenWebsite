@@ -1,1 +1,62 @@
+ <main>
+    <h2>Manager Orders Dashboard</h2>
 
+    <form class="filter-form" method="GET" action="/manager-dashboard">
+        <div class="form-group">
+            <label for="city">City:</label>
+            <select name="city" id="city">
+            <option value="">--All--</option>
+            <option value="Hermiston" {{#if (eq cityFilter "Hermiston")}}selected{{/if}}>Hermiston</option>
+            <option value="Richland" {{#if (eq cityFilter "Richland")}}selected{{/if}}>Richland</option>
+            <option value="Eugene" {{#if (eq cityFilter "Eugene")}}selected{{/if}}>Eugene</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="deliveryOnly">Delivery Only</label>
+            <input type="checkbox" name="deliveryOnly" id="deliveryOnly" {{#if deliveryFilter}}checked{{/if}}>
+        </div>
+        <div class="form-group">
+            <button type="submit">Filter</button>
+        </div>
+    </form>
+
+    <section class="summary">
+        <h3>Summary for {{#if cityFilter}}{{cityFilter}}{{else}}All Cities{{/if}}{{#if deliveryFilter}} -- Delivery Only{{/if}}</h3>
+        <p><strong>Total Orders:</strong> {{orderCount}}</p>
+        <p><strong>Total Revenue:</strong> ${{totalRevenue}}</p>
+        <p><strong>Average Order Total:</strong> ${{averageOrder}}</p>
+        <p><strong>Delivery Orders:</strong> {{deliveryCount}}</p>
+    </section>
+
+    <section class="order-details">
+        <h3>Order Details</h3>
+  {{#if orders.length}}
+    <ul>
+      {{#each orders}}
+        <li class="order-box">
+          <strong>Date:</strong> {{date}}<br>
+          <strong>City:</strong> {{city}}<br>
+          <strong>Delivery:</strong> {{#if this.delivery}}Yes{{else}}No{{/if}}<br>
+          <strong>Entrees:</strong>
+          <ul>
+            {{#each entrees}}<li>{{quantity}} × {{name}}</li>{{/each}}
+          </ul>
+          <strong>Beverages:</strong>
+          <ul>
+            {{#each beverages}}<li>{{quantity}} × {{name}}</li>{{/each}}
+          </ul>
+
+          <strong>Desserts:</strong>
+          <ul>
+            {{#each desserts}}<li>{{quantity}} × {{name}}</li>{{/each}}
+          </ul>
+
+          <strong>Total:</strong> ${{total}}<br>
+        </li>
+      {{/each}}
+    </ul>
+  {{else}}
+    <p>No orders found for this filter.</p>
+  {{/if}}
+  </section>
+</main>
